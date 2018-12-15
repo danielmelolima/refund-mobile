@@ -1,0 +1,15 @@
+page-config {
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .container-inputs{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}

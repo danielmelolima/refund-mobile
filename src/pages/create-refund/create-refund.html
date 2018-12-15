@@ -1,0 +1,23 @@
+<ion-header>
+  <refund-header title="{{ isEdit() ? 'Editar' :  'Novo' }} registro"></refund-header>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div class="container-inputs">
+      <refund-input-date label="Data" [(value)]="expense.date" [disabled]="isEdit()"></refund-input-date>
+      <refund-select label="Tipo" [options]="expenseOptions" [(value)]="expense.type"></refund-select>
+      <refund-input-currency label="Valor" [(value)]="expense.price"></refund-input-currency>
+      <refund-input label="Justificativa" [(value)]="expense.justification"></refund-input>
+      <refund-photo [(value)]="expense.couponPhoto"></refund-photo>
+    </div>
+
+    <div class="container-buttons" *ngIf="isShowButtons()">
+      <refund-button color="secondary" [disabled]="!isValidExpense()" (click)="saveExpense()"> {{ isEdit() ? 'Editar' : 'Adicionar' }}
+      </refund-button>
+      <refund-button color="danger" *ngIf="isEdit()" (click)="deleteExpense()">Deletar
+      </refund-button>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,3 @@
+<refund-card header="Valor Total"> {{ report.totalValue | currency:'R$' }}</refund-card>
+<refund-card header="Total de Registros"> {{ report.quantity }}</refund-card>
+<refund-chart *ngIf="chartOptions" [options]="chartOptions"></refund-chart>

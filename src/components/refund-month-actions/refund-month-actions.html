@@ -1,0 +1,9 @@
+<refund-button (click)="goToCreateExpense()"> Novo Registro</refund-button>
+
+<refund-button [disabled]="!expenses.length" color="secondary" (click)="send()">
+  Enviar por email
+</refund-button>
+
+<refund-button color="danger" (click)="delete()">
+  Deletar despesas
+</refund-button>

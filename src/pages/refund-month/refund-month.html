@@ -1,0 +1,23 @@
+<ion-header>
+  <refund-header [title]="listName"></refund-header>
+</ion-header>
+
+<ion-content padding>
+  <ion-segment [(ngModel)]="option">
+    <ion-segment-button value="actions">
+      Ações
+    </ion-segment-button>
+    <ion-segment-button value="report">
+      Relatório
+    </ion-segment-button>
+    <ion-segment-button value="expenses">
+      Registros
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="option" margin-top>
+      <refund-month-actions [expenses]="expenses" [listName]="listName" *ngSwitchCase="'actions'"></refund-month-actions>
+      <refund-month-report [listName]="listName" *ngSwitchCase="'report'"></refund-month-report>
+      <refund-month-expenses [expenses]="expenses" [listName]="listName" *ngSwitchCase="'expenses'"></refund-month-expenses>
+  </div>
+</ion-content>

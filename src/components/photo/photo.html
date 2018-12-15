@@ -1,0 +1,10 @@
+<ion-item *ngIf="!value" no-lines>
+    <refund-button (click)="getPhoto()">Foto do recibo</refund-button>
+</ion-item>
+
+<ion-item *ngIf="value">
+    <ion-thumbnail item-start no-lines>
+        <img [src]="getUrlPicture()" (click)="showPhoto()">
+    </ion-thumbnail>
+    <refund-button (click)="getPhoto()">Alterar foto</refund-button>
+</ion-item>

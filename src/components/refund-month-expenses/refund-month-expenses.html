@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-list-header>Despesas</ion-list-header>
+  <ion-item *ngFor="let expense of expenses; let i = index" (click)="goToEditExpense(i)">
+    <ion-avatar item-start>
+      <img [src]="getUrlPicture(expense.couponPhoto)">
+    </ion-avatar>
+    <h2>{{ expense.type }}</h2>
+    <h3>{{ expense.date }}</h3>
+    <h3>{{ expense.price | currency:'R$' }}</h3>
+    <h3>{{ expense.justification }}</h3>
+  </ion-item>
+</ion-list>

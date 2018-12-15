@@ -1,0 +1,12 @@
+<ion-header>
+  <refund-header title="Início"></refund-header>
+</ion-header>
+
+<ion-content padding>
+  <refund-button (click)="goToCreateExpense()"> Novo Registro</refund-button>
+  <refund-card *ngIf="refunds.length == 0" margin-top>Nenhum registro adicionado</refund-card>
+  <refund-card *ngFor="let refund of refunds" (click)="goToMonthRefunds(refund.listName)" margin-top>
+      <h2>{{ refund.listName }}</h2>
+      <h3>{{ refund.quantity }} registro(s)</h3>
+  </refund-card>
+</ion-content>

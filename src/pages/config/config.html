@@ -1,0 +1,19 @@
+<ion-header>
+  <refund-header title="Configuração"></refund-header>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="container">
+    <div class="container-inputs">
+      <refund-input label="Projeto" [(value)]="config.project"></refund-input>
+      <refund-input label="Cliente" [(value)]="config.client"></refund-input>
+      <refund-input label="Consultor" [(value)]="config.consultant"></refund-input>
+      <refund-input label="email" [(value)]="config.email"></refund-input>
+      <refund-input label="url (ex: http://123.12.3:8080)" [(value)]="config.url"></refund-input>
+    </div>
+
+    <refund-button [disabled]="!isValid()" (click)="saveConfig()" *ngIf="isShowButtons()">Salvar</refund-button>
+  </div>
+</ion-content>

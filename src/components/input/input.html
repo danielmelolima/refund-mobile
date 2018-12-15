@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-label stacked>{{ label }}</ion-label>
+  <ion-input 
+    [type]="type" 
+    [(ngModel)]="value" 
+    (ngModelChange)="updateValue()">
+  </ion-input>
+</ion-item>

@@ -1,0 +1,6 @@
+<ion-item>
+    <ion-label stacked>{{ label }}</ion-label>
+    <ion-select [(ngModel)]="value" multiple="false" (ngModelChange)="updateValue()">
+      <ion-option *ngFor="let option of options" [value]="option.value">{{ option.name }}</ion-option>
+    </ion-select>
+  </ion-item>
